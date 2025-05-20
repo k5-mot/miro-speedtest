@@ -1,0 +1,444 @@
+# .gitignore file created for free with Tower (https://www.git-tower.com/)
+# For suggestions or improvements please contact us using support@git-tower.com
+# Generated on 2025-05-14
+# Includes: python, micropython, pip, pipenv, poetry, jupyter, spyder, sql, flask, django, tensorflow, pytorch
+
+### Universal ###
+# Common files that should be ignored in all projects
+
+# Logs
+*.log
+*.log.*
+# Temporary files
+*.tmp
+*~
+
+*.bak
+# Environment files (containing secrets, API keys, credentials)
+.env
+*.env
+.env.*
+
+# Local configuration that shouldn't be shared
+*.local
+
+### Python ###
+# Python compiled files, virtual environments, and cache
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+pypackages/
+build/
+develop-eggs/
+dist/
+downloads/
+
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+
+.installed.cfg
+*.egg
+MANIFEST
+.venv
+env/
+
+venv/
+ENV/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# PyInstaller
+*.manifest
+*.spec
+# Installer logs
+pip-log.txt
+
+pip-delete-this-directory.txt
+# Unit test / coverage reports
+.tox/
+.nox/
+.coverage.*
+
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+cover/
+# Translations
+*.mo
+*.pot
+# Django
+
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+# Flask
+instance/
+
+.webassets-cache
+# Scrapy
+.scrapy
+# Sphinx
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+# pyenv
+#.python-version
+
+# pipenv
+#Pipfile.lock
+# poetry
+#poetry.lock
+# pdm
+
+.pdm.toml
+__pypackages__/
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath
+*.sage.py
+# Spyder
+.spyderproject
+.spyproject
+
+# Rope
+.ropeproject
+# mkdocs
+/site
+# mypy
+
+.mypy_cache/
+.dmypy.json
+dmypy.json
+# Pyre
+.pyre/
+
+# pytype
+.pytype/
+# Cython
+cython_debug/
+# Poetry
+
+poetry.toml
+# ruff
+.ruff_cache/
+# LSP
+pyrightconfig.json
+
+*.sage.py
+.pdm.toml
+profile_default/
+.nox/
+.spyproject
+
+site/
+
+### Micropython ###
+# micropython specific files
+
+__pycache__/
+*.mpy
+
+### Pip ###
+# Python pip package manager files
+
+# Pip
+pip-log.txt
+pip-delete-this-directory.txt
+.pip-cache/
+.pip/
+
+pip-selfcheck.json
+requirements.txt.bak
+.pip-tmp/
+.pip-build/
+pip-wheel-metadata/
+
+.pip_cache/
+
+### Pipenv ###
+# pipenv package manager specific files
+
+# Pipenv
+Pipfile.lock
+Pipfile
+.venv/
+.env
+
+.python-version
+Pipfile.bak
+.pipenv/
+.pipenv-cache/
+pipenv-debug.log
+
+.pipenv.lock.bak
+pipenv.lock.bak
+.pipenv-shims/
+.python-version
+requirements.txt.lock
+
+### Poetry ###
+# poetry package manager specific files
+
+# Poetry
+poetry.lock
+.poetry/
+poetry.toml
+.venv/
+
+dist/
+poetry/
+.poetry-cache/
+poetry-debug.log
+poetry.lock.bak
+
+pyproject.toml.lock
+.venv.bak/
+
+### Jupyter ###
+# Jupyter Notebook checkpoints and temporary files
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+*.ipynb_checkpoints.*
+# Jupyter Notebook temp files
+
+.jupyter/
+jupyter_notebook_config.*
+jupyter_notebook_config.json
+jupyter_notebook_config.py
+jupyter_server_config.*
+
+# Jupyter Lab
+.jupyterlab-config
+.jupyterlab/
+jupyterlab-workspace.json
+labconfig/
+
+lab/
+# Jupyter Cache and Metadata
+.jupyter-cache/
+*.jupyterlite.json
+*.jupytext
+
+*.jupytext.py
+.jupytext.toml
+.jupytext.yml
+# Notebook conversions
+*.nbconvert.ipynb
+
+*.nbconvert/
+*.html
+*.pdf
+*.slides.html
+# Virtual Environments
+
+.env
+venv/
+ENV/
+# Data files (often large)
+*.csv
+
+*.dat
+*.pickle
+*.pkl
+*.h5
+*.hdf5
+
+# Output and visualization files
+plots/
+figures/
+output/
+results/
+
+*.png
+*.jpg
+*.svg
+# Temporary and cache files
+__pycache__/
+
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+
+### Spyder ###
+# Spyder IDE project settings and files
+
+# Spyder project settings
+.spyderproject
+.spyproject/
+*.spydata
+.spyderworkspace
+
+.spyder-py3/
+
+### Sql ###
+# sql specific files
+
+*.sql.bak
+*.sql~
+
+### Flask ###
+# flask specific files
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+
+instance/
+migrations/
+
+### Django ###
+# Django specific files, database, and media files
+
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+
+db.sqlite3
+db.sqlite3-journal
+media
+*.py[cod]
+*$py.class
+
+.venv
+env/
+venv/
+ENV/
+static/
+
+migrations/
+*.so
+.Python
+build/
+develop-eggs/
+
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+*.manifest
+
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+htmlcov/
+.tox/
+
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+cover/
+*.mo
+instance/
+.webassets-cache
+.scrapy
+
+docs/_build/
+.pybuilder/
+target/
+.ipynb_checkpoints
+profile_default/
+
+ipython_config.py
+.pdm.toml
+__pypackages__/
+celerybeat-schedule
+celerybeat.pid
+
+*.sage.py
+env.bak/
+venv.bak/
+.spyderproject
+.spyproject
+
+.ropeproject
+/site
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+.pyre/
+.pytype/
+cython_debug/
+
+### Tensorflow ###
+# tensorflow specific files
+
+# TensorFlow specific
+checkpoint
+*.ckpt
+*.pb
+*.pbtxt
+
+events.out.tfevents.*
+graph.pbtxt
+model.ckpt.*
+saved_model/
+tensorboard/
+
+### Pytorch ###
+# pytorch specific files
+
+# PyTorch specific
+*.pt
+*.pth
+*.th
+lightning_logs/
+
+runs/
+wandb/
+checkpoints/

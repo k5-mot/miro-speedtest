@@ -1,0 +1,107 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+  "name": "dev",
+  "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+  // "dockerFile": "Dockerfile",
+  "runArgs": [
+    "--env-file",
+    "./.devcontainer/devcontainer.env",
+    "--name",
+    "miro-speedtest-dev",
+    "--rm"
+  ],
+  "features": {
+    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+      "packages": "curl,ca-certificates,gnupg,vim,poppler-utils",
+      "upgradePackages": true
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true
+    },
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/terraform:1": {
+      "version": "latest"
+    },
+    "ghcr.io/rocker-org/devcontainer-features/pandoc:1": {},
+    // "ghcr.io/devcontainers/features/aws-cli:1": {},
+    // "ghcr.io/devcontainers/features/azure-cli:1": {},
+    // "ghcr.io/joshuanianji/devcontainer-features/gcloud-cli-persistence:1": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    },
+    // "ghcr.io/devcontainers/features/python:1": {
+    //   "version": "3.13"
+    // },
+    "ghcr.io/jsburckhardt/devcontainer-features/uv:1": {
+      "version": "latest"
+    },
+    // "ghcr.io/enricosecondulfo/devcontainer-features/volta:1": {
+    //   "version": "latest"
+    // },
+    "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {}
+  },
+  "mounts": [
+    {
+      "type": "volume",
+      "source": "backend_venv",
+      "target": "${containerWorkspaceFolder}/backend/.venv"
+    },
+    {
+      "type": "volume",
+      "source": "frontend_node_modules",
+      "target": "${containerWorkspaceFolder}/frontend/node_modules"
+    },
+    {
+      "type": "volume",
+      "source": "frontend_next",
+      "target": "${containerWorkspaceFolder}/frontend/.next"
+    }
+  ],
+  "postCreateCommand": "bash ./.devcontainer/postCreate.sh",
+  "postStartCommand": "bash ./.devcontainer/postStart.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // ===============
+        // Base
+        // ===============
+        "VisualStudioExptTeam.vscodeintellicode", // Auto completion
+        "ms-vsliveshare.vsliveshare", // Live Share
+        "saoudrizwan.claude-dev", // Coding Agent by LLM
+        "continue.continue", // Coding Assistants by LLM
+        // ===============
+        // Backend
+        // ===============
+        "charliermarsh.ruff", // Formatter/Linter
+        "ms-python.python", // Language support
+        "ms-python.vscode-pylance", // Language server (Type checker)
+        "ms-python.debugpy", // Debugger
+        "njpwerner.autodocstring", // Docstring support
+        // ==============
+        // Frontend
+        // ==============
+        "dbaeumer.vscode-eslint", // Linter
+        "esbenp.prettier-vscode", // Formatter
+        "xabikos.JavaScriptSnippets", // Snippets for JavaScript
+        // "yoavbls.pretty-ts-errors", // Pretty Error messages for Typescript
+        "crystal-spider.jsdoc-generator", // JSDoc generator
+        "formulahendry.auto-rename-tag", // Auto rename tag for HTML
+        "formulahendry.auto-close-tag", // Auto close tag for HTML
+        "dsznajder.es7-react-js-snippets", // Snippets for React.js
+        // "PulkitGangwar.nextjs-snippets", // Snippets for Next.js
+        // "nextnav.nextnav", // Route Visualizer for Next.js
+        "wix.vscode-import-cost", // Package Size Checker for npm
+        // ==============
+        // MISC
+        // ==============
+        // "ms-azuretools.vscode-docker", // Docker Support
+        "tamasfe.even-better-toml", // TOML support
+        "redhat.vscode-yaml", // YAML support
+        "mhutchie.git-graph" // Git support
+      ]
+    }
+  }
+}

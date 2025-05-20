@@ -1,0 +1,769 @@
+# .gitignore file created for free with Tower (https://www.git-tower.com/)
+# For suggestions or improvements please contact us using support@git-tower.com
+# Generated on 2025-05-14
+# Includes: credentials, windows, macos, linux, aws, azure, azure_devops, gcp, git, github_actions, gitlab_ci, vscode, vim, emacs
+
+### Universal ###
+# Common files that should be ignored in all projects
+
+# Logs
+*.log
+# Temporary files
+*.tmp
+*~
+
+*.bak
+# Environment files (containing secrets, API keys, credentials)
+.env
+*.env
+.env.*
+
+# Local configuration that shouldn't be shared
+*.local
+
+### Credentials ###
+# Various credential files and tokens
+
+# Environment Variables and Configuration
+.env
+.env.local
+.env.*.local
+.env.development
+
+.env.test
+.env.production
+.env.backup
+.env.save
+.env.bak
+
+*.env
+.env-*
+env.json
+config.json
+secrets.json
+
+credentials.json
+secret.json
+settings.json
+.credentials
+.secret
+
+# API Keys and Tokens
+*.api
+*.apikey
+api_key
+api_secret
+
+*.token
+token.*
+access_token*
+auth_token*
+*.oauth
+
+oauth.*
+oauth_token.*
+# Certificates and Keys
+*.key
+*.pem
+
+*.crt
+*.cer
+*.der
+*.pfx
+*.p12
+
+*.keystore
+*.jks
+*.p7b
+*.p7c
+*.csr
+
+*.spc
+*.cert
+*.ssl
+private.*
+public.*
+
+*.priv
+*.pub
+*.secret
+# Database Credentials
+*.db_password
+
+database.yml
+database.json
+db.config
+db.json
+db.yml
+
+sequelize.json
+*.sqlite
+mongod.conf
+redis.conf
+# Cloud Service Credentials
+
+aws.json
+aws.yml
+aws_credentials
+credentials.csv
+google-services.json
+
+googlecloud.json
+azure.json
+*.azureauth
+firebase.json
+firebaserc
+
+# Authentication Files
+auth.json
+auth.config
+authentication.json
+*.auth
+
+*.login
+passwd
+passwords.txt
+htpasswd
+*.htpasswd
+
+# Backup Files
+*.key.bak
+*.pem.bak
+*.crt.bak
+.env.bak
+
+*.backup
+*.secret.bak
+backup-*.key
+
+### Windows ###
+# Windows operating system specific files
+
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+
+*.msm
+*.msp
+*.lnk
+*.tmp
+*.bak
+
+System Volume Information/
+[Tt]emp/
+$Recycle.Bin/
+~$*
+*.log
+
+hiberfil.sys
+pagefile.sys
+*.db
+Desktop.ini
+ntuser.dat*
+
+### Macos ###
+# macOS operating system specific files
+
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+
+Temporary Items
+.apdisk
+*.icloud
+.AppleDB/
+.AppleDesktop/
+
+*.AppleDouble
+*.AppleDB
+.Spotlight-V100/
+.Trashes/
+*.swp
+
+Network Trash Folder/
+.DS_Store?
+.Spotlight-V100
+.Trashes
+
+### Linux ###
+# Linux operating system specific files
+
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+.swap
+.swp
+.swo
+.swn
+.bash_history
+
+.cache/
+.config/
+.local/
+lost+found/
+.gvfs/
+
+.dbus/
+.thumbnails/
+.Xauthority
+.ICEauthority
+.recently-used
+
+*.tmp
+.pid
+.lock
+core
+core.*
+
+.saves-*
+.*.kate-swp
+
+### Aws ###
+# AWS credentials and configuration files
+
+# AWS Credentials and Config
+.aws/
+aws.config
+credentials
+*.pem
+
+*.ppk
+*.cer
+*.p12
+*.pfx
+aws-credentials.json
+
+.aws-sam/
+samconfig.toml
+# AWS CLI
+.aws/credentials
+.aws/config
+
+.aws/cli/cache/
+aws-config.json
+aws-credentials.ini
+# AWS CDK
+cdk.out/
+
+cdk.context.json
+cdk-outputs.json
+.cdk.staging/
+*.cdk.json
+# AWS SAM
+
+.aws-sam/
+samconfig.toml
+.sam/
+template.yaml
+template.yml
+
+# AWS Amplify
+amplify/
+.amplifyrc
+amplify.json
+team-provider-info.json
+
+aws-exports.js
+# AWS CloudFormation
+*.template
+*.template.json
+*.stack.json
+
+cloudformation.json
+cloudformation.yaml
+cloudformation.yml
+# AWS Elastic Beanstalk
+.elasticbeanstalk/
+
+*.cfg.yml
+.ebextensions/
+.ebignore
+# AWS Lambda
+lambda.zip
+
+function.zip
+*.lambda-package.zip
+# AWS Secrets
+*.aws-secrets.json
+secrets.json
+
+aws-keys.json
+# AWS Logs
+aws-logs/
+cloudwatch/
+*.log
+
+# AWS Local Development
+.localstack/
+localstack/
+docker-compose.localstack.yml
+# AWS DynamoDB Local
+
+.dynamodb/
+# AWS SSO
+.sso/
+.aws/sso/cache/
+# AWS AppSync
+
+.appsync/
+# AWS CodeBuild
+buildspec.yml
+# AWS CodePipeline
+pipeline.yml
+
+# AWS ECS
+ecs-params.yml
+# AWS Systems Manager
+.ssm/
+# AWS WorkSpaces
+
+.workspaces/
+
+### Azure ###
+# Azure configuration and credential files
+
+# Azure Credentials
+.azure/
+azure.json
+azureauth.json
+*.publishsettings
+
+*.azureprofile.json
+AzureRmContext.json
+# Azure CLI
+.azure-config/
+azure.cfg
+
+.azurecli/
+azurecli.json
+# Azure Functions
+local.settings.json
+bin/
+
+obj/
+*.functions.zip
+# Azure App Service
+.deployment
+.vscode/settings.json
+
+*.pubxml
+*.pubxml.user
+# Azure DevOps
+.azure-pipelines/
+azure-pipelines.yml
+
+.azure-pipelines-ci.yml
+# Azure Storage
+*.azurite/
+azurite-debug.log
+__blobstorage__/
+
+__queuestorage__/
+__azurite_db*__.json
+# Azure Kubernetes Service
+.kube/
+kubeconfig*
+
+*.aks.yaml
+# Azure Service Fabric
+.sfctl/
+pkg/
+# Azure Development
+
+.vs/
+*.cscfg
+*.csdef
+*.cspkg
+# Azure Secrets
+
+*.pfx
+*.p12
+*.key
+*.pem
+*.arm
+
+# Azure Templates
+*.json.template
+*.parameters.json
+azuredeploy.json
+azuredeploy.parameters.json
+
+# Azure Logs
+ApplicationInsights/
+LogFiles/
+diagnostics/
+# Azure IoT
+
+.iot/
+iot-edge/
+config/
+# Azure Machine Learning
+.amlignore
+
+.amlservice/
+aml_config/
+outputs/
+# Azure Cosmos DB
+.cosmosdb/
+
+# Azure Service Bus
+.servicebus/
+# Azure Event Hubs
+.eventhubs/
+# Azure Container Registry
+
+.acr/
+# Azure Active Directory
+.aad/
+# Azure Monitor
+.monitor/
+
+# Azure CDN
+.cdn/
+
+### Azure_devops ###
+# Azure DevOps pipeline configurations
+
+# Azure DevOps
+azure-pipelines.yml
+.azure-pipelines/
+.azure-pipelines-ci.yml
+azure-pipelines/
+
+# Azure DevOps Build
+.azure-devops/
+build-pipeline.yml
+release-pipeline.yml
+# Azure DevOps Artifacts
+
+.artifacts/
+drop/
+
+### Gcp ###
+# Google Cloud Platform service accounts and configs
+
+# Google Cloud Platform Credentials
+*.json
+gcloud/
+credentials.json
+client_secrets.json
+
+service-account.json
+service-account-key.json
+application_default_credentials.json
+.config/gcloud/
+# GCP CLI
+
+.boto
+.boto.cfg
+.botocfg
+cloud_sql_proxy
+gcloud.config
+
+# GCP App Engine
+app.yaml
+cron.yaml
+dispatch.yaml
+index.yaml
+
+queue.yaml
+.gcloudignore
+# GCP Functions
+functions/
+.functions/
+
+*.function-source.zip
+# GCP Kubernetes Engine
+kubeconfig
+.kube/
+*.kubeconfig
+
+# GCP Terraform
+terraform.tfstate
+terraform.tfstate.backup
+.terraform/
+*.tfvars
+
+# GCP Development
+.cloudsdk/
+cloud_env/
+gcp-env/
+# GCP Secrets
+
+*-credentials.json
+*-key.json
+secrets/
+# GCP Logs
+stackdriver/
+
+cloud-logs/
+# GCP Cloud Build
+cloudbuild.yaml
+# GCP Cloud Run
+service.yaml
+
+# GCP Firestore
+.firebaserc
+firebase.json
+# GCP BigQuery
+*.bq
+
+# GCP Datastore
+datastore-indexes.yaml
+# GCP Cloud Storage
+.gsutil/
+
+### Git ###
+# Git version control system files and directories
+
+# Git
+.git/
+.gitignore
+.gitattributes
+.gitmodules
+
+.git-rewrite/
+/.git-credentials
+.git-blame-ignore-revs
+*.git
+.gitkeep
+
+.git-old/
+.gitconfig
+.github/
+.gitreview
+.gitk
+
+.gitstats
+.gitchangelog.rc
+.git-blame*
+.git-rewrite/
+.gitmessage
+
+.gitflow
+git.properties
+.git-blame-ignore
+.gitkeep
+.gitattributes.local
+
+.git/lfs/
+.git-crypt/
+.gitflow.default
+.gitlint
+.gitversion
+
+.gitsecret/
+.git/hooks/
+.git-credentials.local
+
+### Github_actions ###
+# GitHub Actions workflows and configurations
+
+# GitHub Actions Workflows
+.github/workflows/
+.github/actions/
+.github/workflows/*.yml
+.github/workflows/*.yaml
+
+# GitHub Actions Configuration
+.github/action.yml
+.github/action.yaml
+.github/dependabot.yml
+.github/dependabot.yaml
+
+# GitHub Actions Environment
+.github/env/
+.env.ci
+.env.github-actions
+# GitHub Actions Secrets
+
+.github/secrets/
+*.gpg
+*.asc
+# GitHub Actions Cache
+.actions-cache/
+
+.github-cache/
+# GitHub Actions Artifacts
+artifacts/
+dist/
+build/
+
+# GitHub Actions Logs
+*.log
+action-logs/
+runner-logs/
+# GitHub Actions Local Testing
+
+act.env
+.actrc
+act-secrets.env
+# GitHub Actions Scripts
+scripts/
+
+action-scripts/
+*.sh
+*.ps1
+# GitHub Actions Runtime
+.runner
+
+.tool-versions
+.github/runners/
+
+### Gitlab_ci ###
+# GitLab CI configuration and cache files
+
+# GitLab CI/CD
+.gitlab-ci.yml
+.gitlab/
+gitlab-ci/
+.gitlab-ci/
+
+ci/
+.gitlab-ci.yml.bak
+# GitLab Runner
+.gitlab-runner/
+config.toml
+
+.runner_system
+# GitLab Cache
+.gitlab-cache/
+cache/
+# GitLab Artifacts
+
+artifacts/
+.gitlab-artifacts/
+# GitLab Pages
+public/
+.gitlab-pages/
+
+### Vscode ###
+# Visual Studio Code editor settings and workspace files
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+.history/
+*.vsix
+.ionide
+
+.vs/
+*.code-workspace
+.vscode-test
+.vscodeignore
+.vscode/chrome
+
+.vscode-server/
+.vscode/sftp.json
+.vscode/tags
+.devcontainer/
+
+### Vim ###
+# Vim editor swap and temporary files
+
+# Vim temporary files
+*.swp
+*.swo
+*.swn
+*.swm
+
+*.swl
+*.un~
+*~
+.netrwhist
+Session.vim
+
+Sessionx.vim
+.vim/
+*.vim.old
+.viminfo
+.vimrc.local
+
+.nvimlog
+.undo/
+.backup/
+.swap/
+.vim-bookmarks
+
+.vimsession
+.vim-fuf-data/
+*.orig
+[._]*.s[a-v][a-z]
+!*.svg
+
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+### Emacs ###
+# emacs editor specific files
+
+# Emacs temporary files
+*~
+*#
+.#*
+*.elc
+
+auto-save-list
+tramp
+.org-id-locations
+*_archive
+*_flymake.*
+
+*.rel
+.cask/
+dist/
+flycheck_*.el
+.projectile
+
+.dir-locals.el
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+
+.eshell/
+/.sx/
+*.eld
+/.emacs.d/
+/.emacs.d/elpa/
+
+/.emacs.d/auto-save-list/
+/.emacs.d/backups/
+*.~undo-tree~
+*_flymake
+/.emacs.d/backup/
+
+/.emacs.d/places
+/.emacs.d/url/
