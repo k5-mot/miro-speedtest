@@ -8,6 +8,7 @@ import {
   Stack,
 } from "@mui/material";
 import { StickyNote } from "@mirohq/websdk-types";
+import { ConstructionOutlined } from "@mui/icons-material";
 
 // Miro公式のサポートカラー型
 const STICKY_COLORS = [
@@ -81,6 +82,7 @@ export const TestStickyNote: FC = () => {
   const [timeDeleteAPI, setTimeDeleteAPI] = useState<number | null>(null);
   const [createdStickyIds, setCreatedStickyIds] = useState<string[]>([]);
   const [tagId, setTagId] = useState<string>("");
+  const [noteIds, setNoteIds] = useState<string[]>([]);
 
   /**
    * 付箋生成
@@ -216,8 +218,10 @@ export const TestStickyNote: FC = () => {
     });
 
     const timeEnd = performance.now();
-
-    setTagId((await response.json()).tag_id);
+    const responseBody = await response.json();
+    setTagId(responseBody.tag_id);
+    setNoteIds(responseBody.item_ids);
+    // console.log(responseBody.item_ids);
     setTimePostAPI((timeEnd - timeStart) / 1000);
   }, []);
 
@@ -226,7 +230,7 @@ export const TestStickyNote: FC = () => {
 
     console.log("getStickyNotesByAPI");
 
-    await fetch(`${baseUrl}/api/miro/sticky_note/get`, {
+    const response = await fetch(`${baseUrl}/api/miro/sticky_note/get`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -236,7 +240,7 @@ export const TestStickyNote: FC = () => {
         board_id: (await miro.board.getInfo()).id,
       }),
     });
-
+    console.log(await response.json());
     const timeEnd = performance.now();
     setTimeGetAPI((timeEnd - timeStart) / 1000);
   }, []);

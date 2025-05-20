@@ -6,8 +6,9 @@ from typing import Annotated
 
 from fastapi import APIRouter, Query, Response
 from fastapi.responses import JSONResponse
-from miro_api import Miro
+from miro_api.miro_api_wrapper import Miro
 from miro_api.models.sticky_note_create_request import StickyNoteCreateRequest
+from miro_api.models.sticky_note_item import StickyNoteItem
 from miro_api.models.tag_create_request import TagCreateRequest
 from pydantic import BaseModel
 
@@ -61,6 +62,15 @@ class CreateRequest(BaseModel):
     board_id: str
 
 
+class StickyNoteRequest(BaseModel):
+    """付箋作成リクエスト."""
+
+    user_id: str
+    board_id: str
+    tag_id: str
+    item_ids: list[str]
+
+
 class CreateResponse(BaseModel):
     """付箋作成レスポンス."""
 
@@ -79,7 +89,7 @@ def create_sticky_notes(request: CreateRequest) -> CreateResponse:
         tag_create_request=TagCreateRequest(title=f"speedtest-{nowtime}"),
     )
 
-    def create_sticky_note(i: int, j: int) -> None:
+    def create_sticky_note(i: int, j: int) -> str:
         logger.info("create_sticky_note: %s, %s", i, j)
         sticky_note = miro.api.create_sticky_note_item(
             request.board_id,
@@ -101,17 +111,48 @@ def create_sticky_notes(request: CreateRequest) -> CreateResponse:
             item_id=sticky_note.id,
             tag_id=tag.id,
         )
+        return sticky_note.id
 
     with ThreadPoolExecutor() as executor:
-        executor.map(
+        notes = executor.map(
             lambda pos: create_sticky_note(*pos),
             [(i, j) for i in range(NUM_Y) for j in range(NUM_X)],
         )
 
-    return CreateResponse(tag_id=tag.id)
+    return CreateResponse(tag_id=tag.id, item_ids=notes)
 
 
 @router.get("/get")
-def get_sticky_notes() -> None:
+def get_sticky_notes(request: StickyNoteRequest) -> CreateResponse:
     """付箋を取得."""
-    pass
+    miro = get_miro_client_by_user_id(request.user_id)
+    nowtime = datetime.datetime.now(tz=datetime.UTC)
+    nowtime = nowtime.strftime("%Y%m%d%H%M%S")
+    # tag = miro.api.create_tag(
+    #     board_id=request.board_id,
+    #     tag_create_request=TagCreateRequest(title=f"speedtest-{nowtime}"),
+    # )
+
+    def create_sticky_note(i: int, j: int) -> str:
+        logger.info("create_sticky_note: %s, %s", i, j)
+        sticky_note = miro.api.get_sticky_note_item(
+            request.board_id, StickyNoteRequest()
+        )
+        sticky_note = miro.api.create_sticky_note_item(
+            request.board_id,
+        )
+        # miro.api.attach_tag_to_item(
+        #     board_id_platform_tags=request.board_id,
+        #     item_id=sticky_note.id,
+        #     tag_id=tag.id,
+        # )
+        logger.info(sticky_note.data)
+        return sticky_note.id
+
+    with ThreadPoolExecutor() as executor:
+        notes = executor.map(
+            lambda pos: create_sticky_note(*pos),
+            [(i, j) for i in range(NUM_Y) for j in range(NUM_X)],
+        )
+
+    return CreateResponse(tag_id=request.tag_id, item_ids=notes)
