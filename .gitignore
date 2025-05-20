@@ -35,6 +35,7 @@
 .env.backup
 .env.save
 .env.bak
+!.env.sample
 
 *.env
 .env-*
@@ -468,7 +469,7 @@ drop/
 # Google Cloud Platform service accounts and configs
 
 # Google Cloud Platform Credentials
-*.json
+# *.json
 gcloud/
 credentials.json
 client_secrets.json
@@ -543,7 +544,7 @@ datastore-indexes.yaml
 
 # Git
 .git/
-.gitignore
+# .gitignore
 .gitattributes
 .gitmodules
 
@@ -659,7 +660,7 @@ cache/
 artifacts/
 .gitlab-artifacts/
 # GitLab Pages
-public/
+# public/
 .gitlab-pages/
 
 ### Vscode ###
