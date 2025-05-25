@@ -46,20 +46,21 @@
   "mounts": [
     {
       "type": "volume",
-      "source": "backend_venv",
+      "source": "devcontainer_backend_venv",
       "target": "${containerWorkspaceFolder}/backend/.venv"
     },
     {
       "type": "volume",
-      "source": "frontend_node_modules",
+      "source": "devcontainer_frontend_node",
       "target": "${containerWorkspaceFolder}/frontend/node_modules"
     },
     {
       "type": "volume",
-      "source": "frontend_next",
+      "source": "devcontainer_frontend_next",
       "target": "${containerWorkspaceFolder}/frontend/.next"
     }
   ],
+  "containerUser": "vscode",
   "postCreateCommand": "bash ./.devcontainer/postCreate.sh",
   "postStartCommand": "bash ./.devcontainer/postStart.sh",
   "customizations": {
