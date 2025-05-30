@@ -1,7 +1,7 @@
 "use client";
 import { Typography, Container, CircularProgress } from "@mui/material";
 import { useEffect } from "react";
-import congraturations from "@/public/congratulations.png";
+// import congraturations from "@/public/congratulations.png";
 import Image from "next/image";
 
 export default function Signed() {
@@ -31,7 +31,7 @@ export default function Signed() {
       }}
     >
       <Image
-        src={congraturations}
+        src="/congratulations.png"
         alt="Congratulations"
         width={200}
         height={200}
