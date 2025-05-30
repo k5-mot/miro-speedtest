@@ -13,7 +13,7 @@
   ],
   "features": {
     "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-      "packages": "curl,ca-certificates,gnupg,vim,poppler-utils",
+      "packages": "curl,ca-certificates,gnupg,vim,jq,poppler-utils",
       "upgradePackages": true
     },
     "ghcr.io/devcontainers/features/common-utils:2": {
@@ -22,26 +22,27 @@
       "installOhMyZsh": true
     },
     "ghcr.io/devcontainers/features/git:1": {},
-    "ghcr.io/devcontainers/features/terraform:1": {
-      "version": "latest"
-    },
+    // "ghcr.io/devcontainers/features/terraform:1": {
+    //   "version": "latest"
+    // },
     "ghcr.io/rocker-org/devcontainer-features/pandoc:1": {},
     // "ghcr.io/devcontainers/features/aws-cli:1": {},
     // "ghcr.io/devcontainers/features/azure-cli:1": {},
     // "ghcr.io/joshuanianji/devcontainer-features/gcloud-cli-persistence:1": {},
     "ghcr.io/devcontainers/features/node:1": {
-      "version": "lts"
+      // "version": "lts"
+      "version": "22.16.0"
     },
     // "ghcr.io/devcontainers/features/python:1": {
     //   "version": "3.13"
     // },
     "ghcr.io/jsburckhardt/devcontainer-features/uv:1": {
       "version": "latest"
-    },
+    }
     // "ghcr.io/enricosecondulfo/devcontainer-features/volta:1": {
     //   "version": "latest"
     // },
-    "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {}
+    // "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {}
   },
   // "mounts": [
   //   {
