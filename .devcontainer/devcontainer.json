@@ -43,23 +43,23 @@
     // },
     "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {}
   },
-  "mounts": [
-    {
-      "type": "volume",
-      "source": "devcontainer_backend_venv",
-      "target": "${containerWorkspaceFolder}/backend/.venv"
-    },
-    {
-      "type": "volume",
-      "source": "devcontainer_frontend_node",
-      "target": "${containerWorkspaceFolder}/frontend/node_modules"
-    },
-    {
-      "type": "volume",
-      "source": "devcontainer_frontend_next",
-      "target": "${containerWorkspaceFolder}/frontend/.next"
-    }
-  ],
+  // "mounts": [
+  //   {
+  //     "type": "volume",
+  //     "source": "devcontainer_backend_venv",
+  //     "target": "${containerWorkspaceFolder}/backend/.venv"
+  //   },
+  //   {
+  //     "type": "volume",
+  //     "source": "devcontainer_frontend_node",
+  //     "target": "${containerWorkspaceFolder}/frontend/node_modules"
+  //   },
+  //   {
+  //     "type": "volume",
+  //     "source": "devcontainer_frontend_next",
+  //     "target": "${containerWorkspaceFolder}/frontend/.next"
+  //   }
+  // ],
   "containerUser": "vscode",
   "postCreateCommand": "bash ./.devcontainer/postCreate.sh",
   "postStartCommand": "bash ./.devcontainer/postStart.sh",
