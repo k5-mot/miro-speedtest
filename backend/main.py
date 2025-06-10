@@ -4,8 +4,9 @@ import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-# from starlette.middleware.sessions import SessionMiddleware
 from package.api import oauth, sticky_note, users
+
+# from package.common import get_logger, get_settings
 from package.util import get_logger, get_settings
 
 settings = get_settings()
@@ -25,13 +26,14 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "*"
-        # "http://localhost:3000",
-        # "http://localhost:8000",
-        # "https://miro.com",
-        # "https://miro.com/app",
-        # "https://miro.com/app/dashboard",
-        # "https://miro.com/app/board",
+        "*",
+        "http://localhost:3000",
+        "http://localhost:8000",
+        "https://miro.com",
+        "https://miro.com/app",
+        "https://miro.com/app/dashboard",
+        "https://miro.com/app/board",
+        "https://miro-speedtest.pages.dev",
     ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
