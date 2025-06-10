@@ -25,12 +25,13 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:3000",
-        "http://localhost:8000",
-        "https://miro.com",
-        "https://miro.com/app",
-        "https://miro.com/app/dashboard",
-        "https://miro.com/app/board",
+        "*"
+        # "http://localhost:3000",
+        # "http://localhost:8000",
+        # "https://miro.com",
+        # "https://miro.com/app",
+        # "https://miro.com/app/dashboard",
+        # "https://miro.com/app/board",
     ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],

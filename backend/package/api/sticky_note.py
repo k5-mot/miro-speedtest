@@ -2,17 +2,15 @@ import datetime
 import secrets
 import string
 from concurrent.futures import ThreadPoolExecutor
-from typing import Annotated
 
-from fastapi import APIRouter, Query, Response
-from fastapi.responses import JSONResponse
-from miro_api.miro_api_wrapper import Miro
+from fastapi import APIRouter
+
+# from miro_api.miro_api_wrapper import Miro
 from miro_api.models.sticky_note_create_request import StickyNoteCreateRequest
-from miro_api.models.sticky_note_item import StickyNoteItem
 from miro_api.models.tag_create_request import TagCreateRequest
 from pydantic import BaseModel
 
-from package.api.oauth import get_miro_client_by_user_id
+from package.api.oauth import session_manager
 from package.util import get_logger, get_settings
 
 settings = get_settings()
@@ -81,7 +79,7 @@ class CreateResponse(BaseModel):
 @router.post("/post")
 def create_sticky_notes(request: CreateRequest) -> CreateResponse:
     """付箋を作成する."""
-    miro = get_miro_client_by_user_id(request.user_id)
+    miro = session_manager.get_miro_client(request.user_id)
     nowtime = datetime.datetime.now(tz=datetime.UTC)
     nowtime = nowtime.strftime("%Y%m%d%H%M%S")
     tag = miro.api.create_tag(
@@ -125,7 +123,7 @@ def create_sticky_notes(request: CreateRequest) -> CreateResponse:
 @router.get("/get")
 def get_sticky_notes(request: StickyNoteRequest) -> CreateResponse:
     """付箋を取得."""
-    miro = get_miro_client_by_user_id(request.user_id)
+    miro = session_manager.get_miro_client(request.user_id)
     nowtime = datetime.datetime.now(tz=datetime.UTC)
     nowtime = nowtime.strftime("%Y%m%d%H%M%S")
     # tag = miro.api.create_tag(

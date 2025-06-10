@@ -1,13 +1,11 @@
-import secrets
-import uuid
-from typing import Annotated, Any
+from typing import Annotated
 
-from fastapi import APIRouter, Cookie, Depends, HTTPException, Query, Request, Response
-from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
+from fastapi import APIRouter, Query, Response
+from fastapi.responses import JSONResponse, RedirectResponse
 from miro_api.miro_api_wrapper import Miro
-from miro_api.storage import InMemoryStorage, Storage
-from pydantic import BaseModel, Field
+from miro_api.storage import InMemoryStorage
 
+# from pydantic import BaseModel, Field
 from package.db.session import SessionManager
 from package.util import get_logger, get_settings
 
