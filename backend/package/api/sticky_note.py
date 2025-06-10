@@ -4,14 +4,12 @@ import string
 from concurrent.futures import ThreadPoolExecutor
 
 from fastapi import APIRouter
-
-# from miro_api.miro_api_wrapper import Miro
 from miro_api.models.sticky_note_create_request import StickyNoteCreateRequest
 from miro_api.models.tag_create_request import TagCreateRequest
 from pydantic import BaseModel
 
 from package.api.oauth import session_manager
-from package.util import get_logger, get_settings
+from package.common import get_logger, get_settings
 
 settings = get_settings()
 logger = get_logger()

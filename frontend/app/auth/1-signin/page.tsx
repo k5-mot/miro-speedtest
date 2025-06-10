@@ -34,7 +34,7 @@ export default function Signin() {
 
   const fetchAuthStatus = async () => {
     // 認証ステータスをフェッチ
-    console.log("BuserId", userId);
+    console.log("userId", userId);
 
     const authStatusUrl = `${baseUrl}/api/oauth/status?user_id=${encodeURIComponent(String(userId))}`;
     console.log(`app/auth/1-signin/page.tsx ${authStatusUrl}`);
@@ -91,7 +91,7 @@ export default function Signin() {
       return;
     }
     // 認証URLをバックエンドから取得
-    const authRedirectUrl = (await authRequestResponse.json()).url;
+    const authRedirectUrl = (await authRequestResponse.json()).auth_url;
     console.log("認証URL: ", authRedirectUrl);
 
     // 認証URLをMiroモーダルで開く

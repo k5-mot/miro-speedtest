@@ -3,7 +3,7 @@ import logging.handlers
 import sys
 from pathlib import Path
 
-from package.util.settings import get_settings
+from package.common.settings import get_settings
 
 LOG_FORMAT = """
 %(levelname)s %(asctime)s.%(msecs)03d - %(filename)s:%(lineno)d (%(funcName)s)

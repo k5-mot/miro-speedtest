@@ -19,7 +19,7 @@ export default function Home() {
     try {
       const userInfo = await miro.board.getUserInfo();
       const userId = userInfo.id;
-      const url = `${baseUrl}/api/oauth/refresh?user_id=${userId}`;
+      const url = `${baseUrl}/api/oauth/revoke?user_id=${userId}`;
       await fetch(url, {
         method: "POST",
         credentials: "include",

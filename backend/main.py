@@ -4,10 +4,11 @@ import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from package.api import oauth, sticky_note, users
+# from package.api import oauth, sticky_note, users
+from package.api import health, oauth, sticky_note
+from package.common import get_logger, get_settings
 
-# from package.common import get_logger, get_settings
-from package.util import get_logger, get_settings
+# from package.util import get_logger, get_settings
 
 settings = get_settings()
 logger = get_logger()
@@ -36,19 +37,13 @@ app.add_middleware(
         "https://miro-speedtest.onrender.com",
     ],
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-    allow_headers=[
-        "Content-Type",
-        "Authorization",
-        "X-CSRF-Token",
-        "Access-Control-Allow-Origin",
-        "Access-Control-Allow-Headers",
-        "Access-Control-Allow-Methods",
-    ],
+    allow_methods=["*"],
+    allow_headers=["*"],
     expose_headers=["*"],
 )
 
-app.include_router(users.router, tags=["Users"], prefix="/api/users")
+app.include_router(health.router, tags=["Health"], prefix="/api/health")
+# app.include_router(users.router, tags=["Users"], prefix="/api/users")
 app.include_router(oauth.router, tags=["OAuth"], prefix="/api/oauth")
 app.include_router(
     sticky_note.router, tags=["Miro", "StickyNote"], prefix="/api/miro/sticky_note"
