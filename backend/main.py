@@ -26,7 +26,6 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "*",
         "http://localhost:3000",
         "http://localhost:8000",
         "https://miro.com",
@@ -34,6 +33,7 @@ app.add_middleware(
         "https://miro.com/app/dashboard",
         "https://miro.com/app/board",
         "https://miro-speedtest.pages.dev",
+        "https://miro-speedtest.onrender.com",
     ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
@@ -41,6 +41,9 @@ app.add_middleware(
         "Content-Type",
         "Authorization",
         "X-CSRF-Token",
+        "Access-Control-Allow-Origin",
+        "Access-Control-Allow-Headers",
+        "Access-Control-Allow-Methods",
     ],
     expose_headers=["*"],
 )
